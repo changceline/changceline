@@ -1,1 +1,23 @@
-a10
+#include <iostream>
+using namespace std;
+int main(){
+    long int a;
+    cin>>a;
+    int f=0;
+    int count=0;
+    for(int i=2; i <= a ; i++){
+        while( a%i == 0){
+            count++;
+            a=a/i;
+        }
+        if(count>0) {
+          if(f==0 && count == 1){cout<<i<<" ";}
+          if(f==0 && count > 1){cout<<i<<"^"<<count<<" ";}
+          if(f>0 && count == 1){cout<<"* "<<i<<" ";}
+          if(f>0 && count > 1)cout<<"* "<<i<<"^"<<count<<" ";
+          count = 0;
+          f++;
+          }
+          
+    }
+}
